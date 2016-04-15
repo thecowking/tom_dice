@@ -5,7 +5,6 @@ This is a quick and dirty script to show why excel is not the tool for everythin
 It's a lot more extensible and mutable than the original spreadsheet, as you only need to add
 a die to the dictionary and/or a combination to the combinations array
 """
-from collections import Counter as counter
 try:
 	from matplotlib import pyplot as plt
 except ImportError:
