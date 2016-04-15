@@ -6,7 +6,13 @@ It's a lot more extensible and mutable than the original spreadsheet, as you onl
 a die to the dictionary and/or a combination to the combinations array
 """
 from collections import Counter as counter
-from matplotlib import pyplot as plt
+try:
+	from matplotlib import pyplot as plt
+except ImportError:
+	exit("""This script requires matplotlib installed, please pip install matplotlib.
+		If you don't have Pip, you can find it here:
+		https://pip.pypa.io/en/stable/installing/
+		""")
 try:
 	import numpy as np
 except ImportError:
@@ -117,8 +123,15 @@ def create_all_sums(combo_dict, out = None):
 def main():
 	combo_dict = make_combo_list()
 	dict_of_sums = create_all_sums(combo_dict)
+	"""
+	I got tired here and gave up on names. 
+	Whelk is a perfectly good name for keys in a 
+	dictionary anyway. 
+	"""
 	for whelk in dict_of_sums:
 		"""
+		#this was debug code but you can uncomment it if you want to see its
+		#output in the terminal
 		print "***************"
 		print whelk
 		print dict_of_sums[whelk]
